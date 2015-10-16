@@ -57,7 +57,7 @@ INCS := $(wildcard $(SRCDIR)/*.hpp)
 OBJS := $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 
-.PHONY: all setup doc clean distclean
+.PHONY: all setup doc clean distclean action
 
 all: setup $(BINDIR)/$(TARGET)
 
@@ -103,3 +103,6 @@ clean:
 
 distclean: clean
 	@$(RM) -rf $(BINDIR) $(DOCDIR)/html
+action: 
+	make
+	./bin/cs251_base
