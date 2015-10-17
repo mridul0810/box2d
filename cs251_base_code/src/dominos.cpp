@@ -27,9 +27,9 @@
 #include "render.hpp"
 
 #ifdef __APPLE__
-	#include <GLUT/glut.h>
+  #include <GLUT/glut.h>
 #else
-	#include "GL/freeglut.h"
+  #include "GL/freeglut.h"
 #endif
 
 #include <cstring>
@@ -59,7 +59,7 @@ namespace cs251
       b1->CreateFixture(&shape, 0.0f);
     }
     {
-    	//Right wall of tank
+      //Right wall of tank
     b2Body* a1;  
     {
       
@@ -74,7 +74,7 @@ namespace cs251
     {
     b2PolygonShape shape;
       shape.SetAsBox(0.25f, 20.0f);
-	
+  
       b2BodyDef bd;
       bd.position.Set(35.0f, 40.0f);
       b2Body* ground = m_world->CreateBody(&bd);
@@ -84,7 +84,7 @@ namespace cs251
     {
     b2PolygonShape shape;
       shape.SetAsBox(5.0f, 0.25f);
-	
+  
       b2BodyDef bd;
       bd.position.Set(32.25f, 20.0f);
       b2Body* ground = m_world->CreateBody(&bd);
@@ -93,16 +93,20 @@ namespace cs251
     {
     b2PolygonShape shape;
       shape.SetAsBox(1.0f, 0.25f);
-	
+  
       b2BodyDef bd;
       bd.position.Set(25.75f, 20.0f);
       b2Body* ground = m_world->CreateBody(&bd);
       ground->CreateFixture(&shape, 0.0f);
+      bd.position.Set(24.0f, 14.0f);
+      shape.SetAsBox(0.2,3, b2Vec2(-2.0f,2.f), 225);
+      b2Body* slant = m_world->CreateBody(&bd);
+      slant->CreateFixture(&shape, 0.0f);
     }
     {
       b2PolygonShape shape;
       shape.SetAsBox(5.0f, 0.25f);
-	
+  
       b2BodyDef bd;
       bd.position.Set(40.0f, 45.0f);
       b2Body* ground = m_world->CreateBody(&bd);
@@ -114,7 +118,7 @@ namespace cs251
     {
       b2PolygonShape shape;
       shape.SetAsBox(10.0f, 0.25f);
-	
+  
       b2BodyDef bd;
       bd.position.Set(35.0f, 17.0f);
       b2Body* ground = m_world->CreateBody(&bd);
@@ -125,28 +129,31 @@ namespace cs251
     {
       b2PolygonShape shape;
       shape.SetAsBox(0.1f, 1.0f);
-	
+  
       b2FixtureDef fd;
       fd.shape = &shape;
       fd.density = 20.0f;
       fd.friction = 0.1f;
-		
+    
       for (int i = 0; i < 10; ++i)
-	{
-	  b2BodyDef bd;
-	  bd.type = b2_dynamicBody;
-	  bd.position.Set(-35.5f + 1.0f * i, 31.25f);
-	  b2Body* body = m_world->CreateBody(&bd);
-	  body->CreateFixture(&fd);
-	}
+  {
+    b2BodyDef bd;
+    bd.type = b2_dynamicBody;
+    bd.position.Set(-35.5f + 1.0f * i, 31.25f);
+    b2Body* body = m_world->CreateBody(&bd);
+    body->CreateFixture(&fd);
+  }
     }
     //The tank pulley system closing door
     {
 
       b2BodyDef *bd = new b2BodyDef;
+      b2BodyDef *myBodyDef = new b2BodyDef;
       bd->type = b2_dynamicBody;
       bd->position.Set(32,25);
       bd->fixedRotation = true;
+      myBodyDef->type = b2_staticBody; //this will be a static body
+      myBodyDef->fixedRotation = true;
       
       //The open box
       b2FixtureDef *fd1 = new b2FixtureDef;
@@ -187,19 +194,21 @@ namespace cs251
 
       //The bar
       bd->position.Set(25,25);
-      	
-      fd2->density = 34.0;	  
+        
+      fd2->density = 34.0;    
       b2Body* box2 = m_world->CreateBody(bd);
       box2->CreateFixture(fd2);
       b2RevoluteJointDef weldJointDef;
       b2Vec2 anchor;
       anchor.Set(27,25);
-	  weldJointDef.Initialize(box2, box3, anchor);
-	  m_world->CreateJoint(&weldJointDef);
+    weldJointDef.Initialize(box2, box3, anchor);
+    m_world->CreateJoint(&weldJointDef);
 
-	  bd->position.Set(0,25);
-      b2Body* box4 = m_world->CreateBody(bd);
-      bs3.SetAsBox(0.2,3, b2Vec2(-2.0f,0.f), 0);
+    myBodyDef->position.Set(16,11);
+      b2Body* box4 = m_world->CreateBody(myBodyDef);
+      bs1.SetAsBox(3,0.2, b2Vec2(0.f,-1.9f), 0);
+      bs2.SetAsBox(0.2,3, b2Vec2(3.0f,1.0f), 0);
+      bs3.SetAsBox(0.2,2, b2Vec2(-3.0f,0.0f), 0);
       box4->CreateFixture(fd1);
       box4->CreateFixture(fd2);
       box4->CreateFixture(fd3);
@@ -214,43 +223,100 @@ namespace cs251
       m_world->CreateJoint(myjoint);
     
 }
-	{
-		b2Body* spherebody;
-	
+  {
+    b2Body* spherebody;
+  
       b2CircleShape circle;
       circle.m_radius = 0.5;
-	
+  
       b2FixtureDef ballfd;
       ballfd.shape = &circle;
-      ballfd.density = 1.0f;
+      ballfd.density = 10.0f;
       ballfd.friction = 0.0f;
-      ballfd.restitution = 0.8f;
-	
-		 for (int i = 0; i < 200; ++i)
-	{
-	  b2BodyDef ballbd;
-	  ballbd.type = b2_dynamicBody;
-	  ballbd.position.Set(45.0-i*1.0/100, 26.6f);
-	  spherebody = m_world->CreateBody(&ballbd);
-	  spherebody->CreateFixture(&ballfd);
-	}
-	ballfd.restitution=0.0;
-	ballfd.density=15.0f;
-	for (int i = 0; i < 5; ++i)
-	{
-	  b2BodyDef ballbd;
-	  ballbd.type = b2_dynamicBody;
-	  ballbd.position.Set(32.0+(i-4)*1.0/4, 30.0+i);
-	  spherebody = m_world->CreateBody(&ballbd);
-	  spherebody->CreateFixture(&ballfd);
-	}
-	}
+      ballfd.restitution = 0.5f;
+  
+     for (int i = 0; i < 200; ++i)
+  {
+    b2BodyDef ballbd;
+    ballbd.type = b2_dynamicBody;
+    ballbd.position.Set(45.0-i*1.0/100, 26.6f);
+    spherebody = m_world->CreateBody(&ballbd);
+    spherebody->CreateFixture(&ballfd);
+  }
+  ballfd.restitution=0.0;
+  ballfd.density=15.0f;
+  for (int i = 0; i < 5; ++i)
+  {
+    b2BodyDef ballbd;
+    ballbd.type = b2_dynamicBody;
+    ballbd.position.Set(32.0+(i-4)*1.0/4, 30.0+i);
+    spherebody = m_world->CreateBody(&ballbd);
+    spherebody->CreateFixture(&ballfd);
+  }
+  }
+
+  {
+    {
+      b2BodyDef *bd = new b2BodyDef;
+      bd->type = b2_dynamicBody;
+      bd->position.Set(7,10);
+      bd->fixedRotation = true;
+      
+      //The open box
+      b2FixtureDef *fd1 = new b2FixtureDef;
+      fd1->density = 10.0;
+      fd1->friction = 0.5;
+      fd1->restitution = 0.f;
+      fd1->shape = new b2PolygonShape;
+      b2PolygonShape bs1;
+      bs1.SetAsBox(2,0.2, b2Vec2(0.f,-1.9f), 0);
+      fd1->shape = &bs1;
+      b2FixtureDef *fd2 = new b2FixtureDef;
+      fd2->density = 10.0;
+      fd2->friction = 0.5;
+      fd2->restitution = 0.f;
+      fd2->shape = new b2PolygonShape;
+      b2PolygonShape bs2;
+      bs2.SetAsBox(0.2,2, b2Vec2(2.0f,0.f), 0);
+      fd2->shape = &bs2;
+      b2FixtureDef *fd3 = new b2FixtureDef;
+      fd3->density = 10.0;
+      fd3->friction = 0.5;
+      fd3->restitution = 0.f;
+      fd3->shape = new b2PolygonShape;
+      b2PolygonShape bs3;
+      bs3.SetAsBox(0.2,2, b2Vec2(-2.0f,0.f), 0);
+      fd3->shape = &bs3;
+       
+      b2Body* box1 = m_world->CreateBody(bd);
+      box1->CreateFixture(fd1);
+      box1->CreateFixture(fd2);
+      box1->CreateFixture(fd3);
+
+      //The bar
+      bd->position.Set(3,16); 
+      fd1->density = 30.0;
+      //bs1.SetAsBox(1,0.2, b2Vec2(0.f,-1.9f), 0);   
+      b2Body* box2 = m_world->CreateBody(bd);
+      box2->CreateFixture(fd1);
+
+      // The pulley joint
+      b2PulleyJointDef* myjoint = new b2PulleyJointDef();
+      b2Vec2 worldAnchorOnBody1(7, 10); // Anchor point on body 1 in world axis
+      b2Vec2 worldAnchorOnBody2(3, 10); // Anchor point on body 2 in world axis
+      b2Vec2 worldAnchorGround1(7, 20); // Anchor point for ground 1 in world axis
+      b2Vec2 worldAnchorGround2(3, 20); // Anchor point for ground 2 in world axis
+      float32 ratio = 1.0f; // Define ratio
+      myjoint->Initialize(box1, box2, worldAnchorGround1, worldAnchorGround2, box1->GetWorldCenter(), box2->GetWorldCenter(), ratio);
+      m_world->CreateJoint(myjoint);
+    }
+  }
       
  //    //Another horizontal shelf
  //    {
  //      b2PolygonShape shape;
  //      shape.SetAsBox(7.0f, 0.25f, b2Vec2(-20.f,20.f), 0.0f);
-	
+  
  //      b2BodyDef bd;
  //      bd.position.Set(1.0f, 6.0f);
  //      b2Body* ground = m_world->CreateBody(&bd);
@@ -262,27 +328,27 @@ namespace cs251
  //    {
  //      b2Body* b2;
  //      {
-	// b2PolygonShape shape;
-	// shape.SetAsBox(0.25f, 1.5f);
-	  
-	// b2BodyDef bd;
-	// bd.position.Set(-36.5f, 28.0f);
-	// b2 = m_world->CreateBody(&bd);
-	// b2->CreateFixture(&shape, 10.0f);
+  // b2PolygonShape shape;
+  // shape.SetAsBox(0.25f, 1.5f);
+    
+  // b2BodyDef bd;
+  // bd.position.Set(-36.5f, 28.0f);
+  // b2 = m_world->CreateBody(&bd);
+  // b2->CreateFixture(&shape, 10.0f);
  //      }
-	
+  
  //      b2Body* b4;
  //      {
-	// b2PolygonShape shape;
-	// shape.SetAsBox(0.25f, 0.25f);
-	  
-	// b2BodyDef bd;
-	// bd.type = b2_dynamicBody;
-	// bd.position.Set(-40.0f, 33.0f);
-	// b4 = m_world->CreateBody(&bd);
-	// b4->CreateFixture(&shape, 2.0f);
+  // b2PolygonShape shape;
+  // shape.SetAsBox(0.25f, 0.25f);
+    
+  // b2BodyDef bd;
+  // bd.type = b2_dynamicBody;
+  // bd.position.Set(-40.0f, 33.0f);
+  // b4 = m_world->CreateBody(&bd);
+  // b4->CreateFixture(&shape, 2.0f);
  //      }
-	
+  
  //      b2RevoluteJointDef jd;
  //      b2Vec2 anchor;
  //      anchor.Set(-37.0f, 40.0f);
@@ -293,24 +359,24 @@ namespace cs251
  //    //The train of small spheres
  //    {
  //      b2Body* spherebody;
-	
+  
  //      b2CircleShape circle;
  //      circle.m_radius = 0.5;
-	
+  
  //      b2FixtureDef ballfd;
  //      ballfd.shape = &circle;
  //      ballfd.density = 1.0f;
  //      ballfd.friction = 0.0f;
  //      ballfd.restitution = 0.0f;
-	
+  
  //      for (int i = 0; i < 10; ++i)
-	// {
-	//   b2BodyDef ballbd;
-	//   ballbd.type = b2_dynamicBody;
-	//   ballbd.position.Set(-22.2f + i*1.0, 26.6f);
-	//   spherebody = m_world->CreateBody(&ballbd);
-	//   spherebody->CreateFixture(&ballfd);
-	// }
+  // {
+  //   b2BodyDef ballbd;
+  //   ballbd.type = b2_dynamicBody;
+  //   ballbd.position.Set(-22.2f + i*1.0, 26.6f);
+  //   spherebody = m_world->CreateBody(&ballbd);
+  //   spherebody->CreateFixture(&ballfd);
+  // }
  //    }
 
  //    //The pulley system
@@ -352,8 +418,8 @@ namespace cs251
  //      box1->CreateFixture(fd3);
 
  //      //The bar
- //      bd->position.Set(10,15);	
- //      fd1->density = 34.0;	  
+ //      bd->position.Set(10,15); 
+ //      fd1->density = 34.0;   
  //      b2Body* box2 = m_world->CreateBody(bd);
  //      box2->CreateFixture(fd1);
 
@@ -372,7 +438,7 @@ namespace cs251
  //    {
  //      b2PolygonShape shape;
  //      shape.SetAsBox(2.2f, 0.2f);
-	
+  
  //      b2BodyDef bd;
  //      bd.position.Set(14.0f, 14.0f);
  //      bd.type = b2_dynamicBody;
@@ -403,7 +469,7 @@ namespace cs251
  //      b2Body* sbody;
  //      b2CircleShape circle;
  //      circle.m_radius = 1.0;
-	
+  
  //      b2FixtureDef ballfd;
  //      ballfd.shape = &circle;
  //      ballfd.density = 50.0f;
