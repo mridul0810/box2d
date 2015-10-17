@@ -126,35 +126,8 @@ namespace cs251
     }
 
     //Dominos
-   /* {
-      b2PolygonShape shape;
-      shape.SetAsBox(0.1f, 1.0f);
-  
-      b2FixtureDef fd;
-      fd.shape = &shape;
-      fd.density = 20.0f;
-      fd.friction = 0.1f;
-    
-      for (int i = 0; i < 10; ++i)
-<<<<<<< HEAD
-	{
-	  b2BodyDef bd;
-	  bd.type = b2_dynamicBody;
-	  bd.position.Set(-35.5f + 1.0f * i, 31.25f);
-	  b2Body* body = m_world->CreateBody(&bd);
-	  body->CreateFixture(&fd);
-	}
-    }*/
-=======
-  {
-    b2BodyDef bd;
-    bd.type = b2_dynamicBody;
-    bd.position.Set(-35.5f + 1.0f * i, 31.25f);
-    b2Body* body = m_world->CreateBody(&bd);
-    body->CreateFixture(&fd);
-  }
-    }
->>>>>>> 1322485e1cb90bf06a37dc3fafd421da6bff9e11
+   
+
     //The tank pulley system closing door
     {
 
@@ -396,7 +369,7 @@ namespace cs251
  //      bd->type = b2_dynamicBody;
  //      bd->position.Set(-10,15);
  //      bd->fixedRotation = true;
-      
+    
  //      //The open box
  //      b2FixtureDef *fd1 = new b2FixtureDef;
  //      fd1->density = 10.0;
