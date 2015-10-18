@@ -1,0 +1,1 @@
+/usr/bin/c++    -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros    CMakeFiles/SlabAllocatorTests.dir/SlabAllocator/SlabAllocatorTests.cpp.o CMakeFiles/SlabAllocatorTests.dir/BodyTracker.cpp.o  -o Release/SlabAllocatorTests -rdynamic ../googletest/Release/libgtest.a ../Box2D/Release/libliquidfun.a -lpthread -lrt 

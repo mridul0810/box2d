@@ -1,0 +1,1 @@
+/usr/bin/c++    -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros    CMakeFiles/FreeListTests.dir/FreeList/FreeListTests.cpp.o CMakeFiles/FreeListTests.dir/BodyTracker.cpp.o  -o Release/FreeListTests -rdynamic ../googletest/Release/libgtest.a ../Box2D/Release/libliquidfun.a -lpthread -lrt 
