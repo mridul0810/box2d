@@ -48,8 +48,8 @@ namespace
 	TestEntry* entry;
 	Test* test;
 	Settings settings;
-	int32 width = 640;
-	int32 height = 480;
+	int32 width = 1366;
+	int32 height = 768;
 	int32 framePeriod = 16;
 	int32 mainWindow;
 	float settingsHz = 60.0;
@@ -669,7 +669,7 @@ int main(int argc, char** argv)
 	GLUI_Panel* drawPanel =	glui->add_panel("Draw");
 	glui->add_checkbox_to_panel(drawPanel, "Shapes", &settings.drawShapes);
 	glui->add_checkbox_to_panel(drawPanel, "Particles", &settings.drawParticles);
-	glui->add_checkbox_to_panel(drawPanel, "Joints", &settings.drawJoints);
+	glui->add_checkbox_to_panel(drawPanel, "Joints", &settings.drawParticles);
 	glui->add_checkbox_to_panel(drawPanel, "AABBs", &settings.drawAABBs);
 	glui->add_checkbox_to_panel(drawPanel, "Contact Points", &settings.drawContactPoints);
 	glui->add_checkbox_to_panel(drawPanel, "Contact Normals", &settings.drawContactNormals);
