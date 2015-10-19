@@ -134,3 +134,139 @@ make[1]: *** [cmTryCompileExec560472403] Error 1
 make: *** [cmTryCompileExec560472403/fast] Error 2
 
 
+Determining if files usbhid.h exist failed with the following output:
+Change Dir: /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3207882424/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3207882424.dir/build.make CMakeFiles/cmTryCompileExec3207882424.dir/build
+make[1]: Entering directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3207882424.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros -Wall    -o CMakeFiles/cmTryCompileExec3207882424.dir/CheckIncludeFiles.c.o   -c /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:20: fatal error: usbhid.h: No such file or directory
+ #include <usbhid.h>
+                    ^
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3207882424.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3207882424/fast] Error 2
+
+Source:
+/* */
+#include <usbhid.h>
+
+
+int main(){return 0;}
+
+Determining if the function vfprintf exists failed with the following output:
+Change Dir: /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2431429829/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2431429829.dir/build.make CMakeFiles/cmTryCompileExec2431429829.dir/build
+make[1]: Entering directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2431429829.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros -Wall -DCHECK_FUNCTION_EXISTS=vfprintf   -o CMakeFiles/cmTryCompileExec2431429829.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+<command-line>:0:23: error: conflicting types for built-in function ‘vfprintf’ [-Werror]
+/usr/share/cmake-2.8/Modules/CheckFunctionExists.c:3:6: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+ char CHECK_FUNCTION_EXISTS();
+      ^
+cc1: all warnings being treated as errors
+make[1]: *** [CMakeFiles/cmTryCompileExec2431429829.dir/CheckFunctionExists.c.o] Error 1
+make[1]: Leaving directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec2431429829/fast] Error 2
+
+
+Determining if the function _doprnt exists failed with the following output:
+Change Dir: /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4226305902/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4226305902.dir/build.make CMakeFiles/cmTryCompileExec4226305902.dir/build
+make[1]: Entering directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4226305902.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros -Wall -DCHECK_FUNCTION_EXISTS=_doprnt   -o CMakeFiles/cmTryCompileExec4226305902.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec4226305902
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4226305902.dir/link.txt --verbose=1
+/usr/bin/cc   -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros -Wall -DCHECK_FUNCTION_EXISTS=_doprnt    CMakeFiles/cmTryCompileExec4226305902.dir/CheckFunctionExists.c.o  -o cmTryCompileExec4226305902 -rdynamic -lm 
+CMakeFiles/cmTryCompileExec4226305902.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `_doprnt'
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec4226305902] Error 1
+make: *** [cmTryCompileExec4226305902/fast] Error 2
+
+
+Determining if the function XParseGeometry exists failed with the following output:
+Change Dir: /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3164517170/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3164517170.dir/build.make CMakeFiles/cmTryCompileExec3164517170.dir/build
+make[1]: Entering directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3164517170.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros -Wall -DCHECK_FUNCTION_EXISTS=XParseGeometry   -o CMakeFiles/cmTryCompileExec3164517170.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3164517170
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3164517170.dir/link.txt --verbose=1
+/usr/bin/cc   -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros -Wall -DCHECK_FUNCTION_EXISTS=XParseGeometry    CMakeFiles/cmTryCompileExec3164517170.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3164517170 -rdynamic -lm 
+CMakeFiles/cmTryCompileExec3164517170.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `XParseGeometry'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec3164517170] Error 1
+make[1]: Leaving directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3164517170/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1469034062/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1469034062.dir/build.make CMakeFiles/cmTryCompileExec1469034062.dir/build
+make[1]: Entering directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1469034062.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros    -o CMakeFiles/cmTryCompileExec1469034062.dir/CheckSymbolExists.c.o   -c /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1469034062
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1469034062.dir/link.txt --verbose=1
+/usr/bin/cc   -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros     CMakeFiles/cmTryCompileExec1469034062.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1469034062 -rdynamic 
+CMakeFiles/cmTryCompileExec1469034062.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec1469034062] Error 1
+make: *** [cmTryCompileExec1469034062/fast] Error 2
+
+File /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1884286743/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1884286743.dir/build.make CMakeFiles/cmTryCompileExec1884286743.dir/build
+make[1]: Entering directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1884286743.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1884286743.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1884286743
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1884286743.dir/link.txt --verbose=1
+/usr/bin/cc   -DDEBUG=0 -Wall -Werror -Wno-long-long -Wno-variadic-macros -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1884286743.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1884286743 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec1884286743] Error 1
+make: *** [cmTryCompileExec1884286743/fast] Error 2
+
+

@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/surender/Downloads/liquidfun-1.1.0/googletest/src/gtest-all.cc" "/home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+  "/home/surender/box2dpro/googletest/src/gtest-all.cc" "/home/surender/box2dpro/liquidfun/Box2D/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,8 +19,8 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/surender/Downloads/liquidfun-1.1.0/googletest/include"
-  "/home/surender/Downloads/liquidfun-1.1.0/googletest"
+  "/home/surender/box2dpro/googletest/include"
+  "/home/surender/box2dpro/googletest"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

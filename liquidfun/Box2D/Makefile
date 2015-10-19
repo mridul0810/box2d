@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D
+CMAKE_SOURCE_DIR = /home/surender/box2dpro/liquidfun/Box2D
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D
+CMAKE_BINARY_DIR = /home/surender/box2dpro/liquidfun/Box2D
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -110,9 +100,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/CMakeFiles /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,6 +167,11 @@ freeglut: cmake_check_build_system
 freeglut/fast:
 	$(MAKE) -f freeglut/CMakeFiles/freeglut.dir/build.make freeglut/CMakeFiles/freeglut.dir/build
 .PHONY : freeglut/fast
+
+# Manual pre-install relink rule for target.
+freeglut/preinstall:
+	$(MAKE) -f freeglut/CMakeFiles/freeglut.dir/build.make freeglut/CMakeFiles/freeglut.dir/preinstall
+.PHONY : freeglut/preinstall
 
 #=============================================================================
 # Target rules for targets named freeglut_static
@@ -421,7 +416,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... Box2D"

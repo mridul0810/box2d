@@ -21,7 +21,7 @@ set(Testbed_Framework_SRCS
 #define the test files.
 set(Testbed_Tests_SRCS
 	Tests/TestEntries.cpp
-	Tests/DamBreak.h
+	Tests/Dominos.h
 	)
 
 # These are used to create visual studio folders.

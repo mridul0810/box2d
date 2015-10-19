@@ -1,4 +1,4 @@
-# Install script for directory: /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D
+# Install script for directory: /home/surender/box2dpro/liquidfun/Box2D
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,13 +34,13 @@ ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/Box2D/cmake_install.cmake")
-  INCLUDE("/home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/HelloWorld/cmake_install.cmake")
-  INCLUDE("/home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/freeglut/cmake_install.cmake")
-  INCLUDE("/home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/glui/cmake_install.cmake")
-  INCLUDE("/home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/Testbed/cmake_install.cmake")
-  INCLUDE("/home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/googletest/cmake_install.cmake")
-  INCLUDE("/home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/Unittests/cmake_install.cmake")
+  INCLUDE("/home/surender/box2dpro/liquidfun/Box2D/Box2D/cmake_install.cmake")
+  INCLUDE("/home/surender/box2dpro/liquidfun/Box2D/HelloWorld/cmake_install.cmake")
+  INCLUDE("/home/surender/box2dpro/liquidfun/Box2D/freeglut/cmake_install.cmake")
+  INCLUDE("/home/surender/box2dpro/liquidfun/Box2D/glui/cmake_install.cmake")
+  INCLUDE("/home/surender/box2dpro/liquidfun/Box2D/Testbed/cmake_install.cmake")
+  INCLUDE("/home/surender/box2dpro/liquidfun/Box2D/googletest/cmake_install.cmake")
+  INCLUDE("/home/surender/box2dpro/liquidfun/Box2D/Unittests/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
@@ -50,7 +50,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/surender/box2dpro/liquidfun/Box2D/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/surender/box2dpro/liquidfun/Box2D/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

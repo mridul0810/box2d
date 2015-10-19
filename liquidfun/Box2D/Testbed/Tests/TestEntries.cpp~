@@ -28,7 +28,7 @@
 	#include "GL/freeglut.h"
 #endif
 
-#include "Dominos.h"
+#include "DamBreak.h"
 
 TestEntry g_testEntries[] =
 {

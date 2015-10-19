@@ -28,11 +28,11 @@
 	#include "GL/freeglut.h"
 #endif
 
-#include "DamBreak.h"
+#include "Dominos.h"
 
 TestEntry g_testEntries[] =
 {
-	{"DamBreak", DamBreak::Create},
+	{"Dominos", Dominos::Create},
 	
 	{NULL, NULL}
 };

@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D
+CMAKE_SOURCE_DIR = /home/surender/box2dpro/liquidfun/Box2D
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D
+CMAKE_BINARY_DIR = /home/surender/box2dpro/liquidfun/Box2D
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -110,14 +100,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(CMAKE_COMMAND) -E cmake_progress_start /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/CMakeFiles /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/Testbed/CMakeFiles/progress.marks
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f CMakeFiles/Makefile2 Testbed/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/CMakeFiles 0
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(CMAKE_COMMAND) -E cmake_progress_start /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles /home/surender/box2dpro/liquidfun/Box2D/Testbed/CMakeFiles/progress.marks
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f CMakeFiles/Makefile2 Testbed/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/surender/box2dpro/liquidfun/Box2D/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f CMakeFiles/Makefile2 Testbed/clean
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f CMakeFiles/Makefile2 Testbed/clean
 .PHONY : clean
 
 # The main clean target
@@ -126,22 +116,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f CMakeFiles/Makefile2 Testbed/preinstall
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f CMakeFiles/Makefile2 Testbed/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f CMakeFiles/Makefile2 Testbed/preinstall
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f CMakeFiles/Makefile2 Testbed/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Testbed/CMakeFiles/Testbed.dir/rule:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f CMakeFiles/Makefile2 Testbed/CMakeFiles/Testbed.dir/rule
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f CMakeFiles/Makefile2 Testbed/CMakeFiles/Testbed.dir/rule
 .PHONY : Testbed/CMakeFiles/Testbed.dir/rule
 
 # Convenience name for target.
@@ -150,7 +140,7 @@ Testbed: Testbed/CMakeFiles/Testbed.dir/rule
 
 # fast build rule for target.
 Testbed/fast:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/build
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/build
 .PHONY : Testbed/fast
 
 Framework/Arrow.o: Framework/Arrow.cpp.o
@@ -158,7 +148,7 @@ Framework/Arrow.o: Framework/Arrow.cpp.o
 
 # target to build an object file
 Framework/Arrow.cpp.o:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Arrow.cpp.o
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Arrow.cpp.o
 .PHONY : Framework/Arrow.cpp.o
 
 Framework/Arrow.i: Framework/Arrow.cpp.i
@@ -166,7 +156,7 @@ Framework/Arrow.i: Framework/Arrow.cpp.i
 
 # target to preprocess a source file
 Framework/Arrow.cpp.i:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Arrow.cpp.i
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Arrow.cpp.i
 .PHONY : Framework/Arrow.cpp.i
 
 Framework/Arrow.s: Framework/Arrow.cpp.s
@@ -174,7 +164,7 @@ Framework/Arrow.s: Framework/Arrow.cpp.s
 
 # target to generate assembly for a file
 Framework/Arrow.cpp.s:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Arrow.cpp.s
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Arrow.cpp.s
 .PHONY : Framework/Arrow.cpp.s
 
 Framework/FullscreenUI.o: Framework/FullscreenUI.cpp.o
@@ -182,7 +172,7 @@ Framework/FullscreenUI.o: Framework/FullscreenUI.cpp.o
 
 # target to build an object file
 Framework/FullscreenUI.cpp.o:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/FullscreenUI.cpp.o
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/FullscreenUI.cpp.o
 .PHONY : Framework/FullscreenUI.cpp.o
 
 Framework/FullscreenUI.i: Framework/FullscreenUI.cpp.i
@@ -190,7 +180,7 @@ Framework/FullscreenUI.i: Framework/FullscreenUI.cpp.i
 
 # target to preprocess a source file
 Framework/FullscreenUI.cpp.i:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/FullscreenUI.cpp.i
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/FullscreenUI.cpp.i
 .PHONY : Framework/FullscreenUI.cpp.i
 
 Framework/FullscreenUI.s: Framework/FullscreenUI.cpp.s
@@ -198,7 +188,7 @@ Framework/FullscreenUI.s: Framework/FullscreenUI.cpp.s
 
 # target to generate assembly for a file
 Framework/FullscreenUI.cpp.s:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/FullscreenUI.cpp.s
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/FullscreenUI.cpp.s
 .PHONY : Framework/FullscreenUI.cpp.s
 
 Framework/Main.o: Framework/Main.cpp.o
@@ -206,7 +196,7 @@ Framework/Main.o: Framework/Main.cpp.o
 
 # target to build an object file
 Framework/Main.cpp.o:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Main.cpp.o
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Main.cpp.o
 .PHONY : Framework/Main.cpp.o
 
 Framework/Main.i: Framework/Main.cpp.i
@@ -214,7 +204,7 @@ Framework/Main.i: Framework/Main.cpp.i
 
 # target to preprocess a source file
 Framework/Main.cpp.i:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Main.cpp.i
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Main.cpp.i
 .PHONY : Framework/Main.cpp.i
 
 Framework/Main.s: Framework/Main.cpp.s
@@ -222,7 +212,7 @@ Framework/Main.s: Framework/Main.cpp.s
 
 # target to generate assembly for a file
 Framework/Main.cpp.s:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Main.cpp.s
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Main.cpp.s
 .PHONY : Framework/Main.cpp.s
 
 Framework/ParticleParameter.o: Framework/ParticleParameter.cpp.o
@@ -230,7 +220,7 @@ Framework/ParticleParameter.o: Framework/ParticleParameter.cpp.o
 
 # target to build an object file
 Framework/ParticleParameter.cpp.o:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/ParticleParameter.cpp.o
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/ParticleParameter.cpp.o
 .PHONY : Framework/ParticleParameter.cpp.o
 
 Framework/ParticleParameter.i: Framework/ParticleParameter.cpp.i
@@ -238,7 +228,7 @@ Framework/ParticleParameter.i: Framework/ParticleParameter.cpp.i
 
 # target to preprocess a source file
 Framework/ParticleParameter.cpp.i:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/ParticleParameter.cpp.i
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/ParticleParameter.cpp.i
 .PHONY : Framework/ParticleParameter.cpp.i
 
 Framework/ParticleParameter.s: Framework/ParticleParameter.cpp.s
@@ -246,7 +236,7 @@ Framework/ParticleParameter.s: Framework/ParticleParameter.cpp.s
 
 # target to generate assembly for a file
 Framework/ParticleParameter.cpp.s:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/ParticleParameter.cpp.s
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/ParticleParameter.cpp.s
 .PHONY : Framework/ParticleParameter.cpp.s
 
 Framework/Render.o: Framework/Render.cpp.o
@@ -254,7 +244,7 @@ Framework/Render.o: Framework/Render.cpp.o
 
 # target to build an object file
 Framework/Render.cpp.o:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Render.cpp.o
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Render.cpp.o
 .PHONY : Framework/Render.cpp.o
 
 Framework/Render.i: Framework/Render.cpp.i
@@ -262,7 +252,7 @@ Framework/Render.i: Framework/Render.cpp.i
 
 # target to preprocess a source file
 Framework/Render.cpp.i:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Render.cpp.i
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Render.cpp.i
 .PHONY : Framework/Render.cpp.i
 
 Framework/Render.s: Framework/Render.cpp.s
@@ -270,7 +260,7 @@ Framework/Render.s: Framework/Render.cpp.s
 
 # target to generate assembly for a file
 Framework/Render.cpp.s:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Render.cpp.s
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Render.cpp.s
 .PHONY : Framework/Render.cpp.s
 
 Framework/Test.o: Framework/Test.cpp.o
@@ -278,7 +268,7 @@ Framework/Test.o: Framework/Test.cpp.o
 
 # target to build an object file
 Framework/Test.cpp.o:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Test.cpp.o
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Test.cpp.o
 .PHONY : Framework/Test.cpp.o
 
 Framework/Test.i: Framework/Test.cpp.i
@@ -286,7 +276,7 @@ Framework/Test.i: Framework/Test.cpp.i
 
 # target to preprocess a source file
 Framework/Test.cpp.i:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Test.cpp.i
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Test.cpp.i
 .PHONY : Framework/Test.cpp.i
 
 Framework/Test.s: Framework/Test.cpp.s
@@ -294,7 +284,7 @@ Framework/Test.s: Framework/Test.cpp.s
 
 # target to generate assembly for a file
 Framework/Test.cpp.s:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Test.cpp.s
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Framework/Test.cpp.s
 .PHONY : Framework/Test.cpp.s
 
 Tests/TestEntries.o: Tests/TestEntries.cpp.o
@@ -302,7 +292,7 @@ Tests/TestEntries.o: Tests/TestEntries.cpp.o
 
 # target to build an object file
 Tests/TestEntries.cpp.o:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o
 .PHONY : Tests/TestEntries.cpp.o
 
 Tests/TestEntries.i: Tests/TestEntries.cpp.i
@@ -310,7 +300,7 @@ Tests/TestEntries.i: Tests/TestEntries.cpp.i
 
 # target to preprocess a source file
 Tests/TestEntries.cpp.i:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.i
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.i
 .PHONY : Tests/TestEntries.cpp.i
 
 Tests/TestEntries.s: Tests/TestEntries.cpp.s
@@ -318,7 +308,7 @@ Tests/TestEntries.s: Tests/TestEntries.cpp.s
 
 # target to generate assembly for a file
 Tests/TestEntries.cpp.s:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.s
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.s
 .PHONY : Tests/TestEntries.cpp.s
 
 # Help Target
@@ -331,7 +321,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... Framework/Arrow.o"
@@ -366,6 +355,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/surender/box2dpro/liquidfun/Box2D && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

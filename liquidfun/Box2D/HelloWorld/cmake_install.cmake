@@ -1,4 +1,4 @@
-# Install script for directory: /home/surender/Downloads/liquidfun-1.1.0/liquidfun/Box2D/HelloWorld
+# Install script for directory: /home/surender/box2dpro/liquidfun/Box2D/HelloWorld
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -45,6 +45,10 @@ FILE(REMOVE_RECURSE
   "Release/libglut.so"
   "Release/libglut.so.3.9.0"
   "Release/libglut.so.3"
+  "Release/libglut.pdb"
+  "CMakeFiles/CMakeRelink.dir/libglut.so"
+  "CMakeFiles/CMakeRelink.dir/libglut.so.3.9.0"
+  "CMakeFiles/CMakeRelink.dir/libglut.so.3"
 )
 
 # Per-language clean rules from dependency scanning.
