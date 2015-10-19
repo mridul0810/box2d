@@ -44,8 +44,8 @@ public:
 
      //Making all the particle groups
      {
-       b2PolygonShape shape;/*! Initializing a shape*/
-       shape.SetAsBox(0.8f, 1.0f, b2Vec2(-1.2f, 1.01f), 0);
+       b2PolygonShape shape;// Initializing a shape to use for the particles
+       shape.SetAsBox(0.8f, 1.0f, b2Vec2(-1.2f, 1.01f), 0);// 
        b2ParticleGroupDef pd;
        b2ParticleGroupDef pd1;
        pd.flags = TestMain::GetParticleParameterValue();
